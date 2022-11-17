@@ -11,11 +11,13 @@
         body {
             background: linear-gradient(90deg, rgb(79, 159, 191) 50%, rgb(173, 230, 249) 0);
             background-size: 10px;
+            /* reset css에 추가할 세팅 */
+            overflow-x: hidden;
         }
 
         .container {
             width: 1440px;
-            background-color: antiquewhite;
+            background-color: white;
             margin: auto;
             position: relative;
         }
@@ -252,7 +254,44 @@
             width: 1440px;
             margin: auto;
             height: 100px;
-            background-color: black;
+            display: flex;
+            background-color: white;
+            border-top: 1px solid gray;
+        }
+
+        .footer-right-container {
+            padding: 15px;
+            font-size: 12px;
+
+        }
+
+        .footer-left-container {
+            width: 250px;
+            display: flex;
+            font-size: 0;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid gray;
+        }
+
+        .footer-info ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-info li:nth-child(1) a {
+            font-weight: bold;
+        }
+
+        .footer-info {
+            margin-bottom: 10px;
+        }
+
+        address {
+            font-style: normal;
+        }
+        section {
+            border-left: 1px solid gray;
         }
 
         @media screen and (max-width:1470px) {
@@ -283,6 +322,7 @@
         @media screen and (max-width:1000px) {
             section {
                 margin: 0 0 0 250px;
+                padding-bottom: 20px;
             }
 
             .product-container li {
@@ -315,18 +355,96 @@
         }
 
         @media screen and (max-width:600px) {
+            .container {
+                width: 100%;
+                background-color: transparent;
+            }
             header {
                 float: none;
                 width: 100%;
-                height: 100px;
+                height: auto;
+                padding: 0;
+                background-color: transparent;
+            }
+            header h1 {
+                background-color: white;
+                margin-bottom: 0;
+            }
+            header h1 img {
+                width: 200px;
+            }
+            .lnb ul li {
+                width: 33%;
+                text-align: center;
+                background-image: none;
             }
 
+            .lnb ul {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .lnb {
+                margin-bottom: 0;
+            }
             section {
                 margin: 0;
             }
 
+            .information-container {
+                width: 100%;
+                background-color: white;
+            }
+
+            .information-container div {
+                margin-bottom: 20px;
+            }
+
+            .information-container div:nth-child(2) {
+                justify-content: center;
+                gap: 30px;
+            }
+            .service-container {
+                width: 100%;
+                background-color: white;
+            }
+
             aside {
                 margin: 0;
+            }
+            .tell-container {
+                text-align: center;
+                background-color: white;
+                padding: 20px 0;
+                margin-bottom: 5px;
+            }
+            .follow-container ul {
+                gap: 0;
+                flex-wrap: nowrap;
+            }
+            .follow-container {
+                margin-bottom: 5px;
+                padding: 20px 0;
+                background-color: white;
+            }
+            .pbnews-container,
+            .pbevent-container {
+                display: none;
+            }
+            footer {
+                width: 100%;
+            }
+            .footer-left-container {
+                display: none;
+            }
+
+            .footer-right-container {
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer-info ul {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -499,7 +617,26 @@
             <div><img src="./images/bn_rwd_03.png" alt=""></div>
         </aside>
     </div>
-    <footer></footer>
+    <footer>
+        <div class="footer-left-container">
+            <h1>logo
+                <img src="./images/logo_grey.png" alt="">
+            </h1>
+        </div>
+        <div class="footer-right-container">
+            <div class="footer-info">
+                <ul>
+                    <li><a href="#">개인정보취급방침</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                </ul>
+            </div>
+            <address>길동 팩토리(HongGilDong Factory) 대표자 : 홍길동
+                대표홈페이지 : www.paris.co.kr
+                ©2018 gildong Factory All RIGHT RESERVED
+            </address>
+        </div>
+    </footer>
 </body>
 
 </html>
